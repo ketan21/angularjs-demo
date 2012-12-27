@@ -1,0 +1,40 @@
+<html ng-app>
+<head>
+	<title></title>
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js"></script>
+	<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="todo.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="todo.css">
+</head>
+
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container" style="width: auto;">
+			<a class="brand" href="#">My Task Manager App</a>
+		</div>
+	</div><!-- /navbar-inner -->
+</div>
+</nav>
+<body class="container">
+
+<div ng-controller="TodoCtrl">
+	<h3>Total Tasks: {{getTotalTodos()}}</h3>
+	<span class="remaining-{{remaining()}} remaining">{{remaining()}} of {{todos.length}} remaining</span>
+	<ul class="unstyled">
+		<li class="divider"></li>
+		<li ng-repeat="todo in todos">
+			<input type="checkbox" ng-model="todo.done">
+			<span class="done-{{todo.done}}">{{todo.text}}</span>
+		</li>
+	</ul>
+	<form class="form-horizontal">
+		<input type="text" ng-model="formTodoText" ng-model-instant>
+		<button class="btn btn-small" ng-click="addTodo()"><i class="icon-plus"></i> Add</button>
+	</form>
+	
+	<button class="btn btn-small btn-danger" ng-click="clearTodo()"><i class="icon-trash"></i> Clear Completed</button>
+	<button class="btn btn-small btn-save" ng-click="archive()"><i class="icon-briefcase"></i> Archive</button>	
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.done-true{
+	text-decoration: line-through;
+	color: #bbb;
+}
+
+.done-false{
+	margin: 2px ;
+}
+
+h3 {
+	color: #BD362F;
+	margin: 5px 1px 5px 0;
+}
+
+ul li {
+	margin: 5px;
+}
+
+.remaining{
+	font-weight: bold;
+	font-size: 120%;
+}
+.remaining-0{
+	color: green;
+}
